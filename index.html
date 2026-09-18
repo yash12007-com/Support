@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <title>Yash12007 Support</title>
+    <link rel="shortcut icon" href="https://www.yash12007.com/favicon.ico" type="image/x-icon">
+    <style>
+        ::-webkit-scrollbar{width: 0px; height: 0px;}
+        html{scroll-behavior: smooth;}
+        body{
+            background: #fff;
+            color: #000;
+            font-family: "Jura", sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }nav{
+            display: flex;
+            place-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #2223;
+            padding: 10px;
+            width: calc(100% - 20px);
+            height: 50px;
+            z-index: 10000;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background: #fff7;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }nav span{
+            font-weight: 600;
+        }.hero{
+            margin-top: 70px;
+            background: #fff;
+            color: #000;
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            place-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+            border-bottom: 1px solid #222;
+        }button, a{
+            text-align: center;
+            text-decoration: none;
+            background: transparent;
+            color: #000;
+            cursor: pointer;
+            border: none;
+            margin: 5px;
+            padding: 10px 20px;
+        }.hero a{
+            background: #000;
+            color: #fff;
+            border-radius: 10px;
+            border: 2px solid #000;
+        }.hero a:nth-child(2){
+            background: transparent;
+            color: #000;
+        }.hero h1{
+            background: linear-gradient(120deg, #a0f, #0ef);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }nav img{box-shadow: 0 0 10px 1px #2223;}
+        .learnmore, .raiseticket, .trackrequest, footer{
+            width: calc(100% - 40px);
+            height: fit-content;
+            min-height: 120px;
+            padding: 20px;
+            background: #fff;
+            color: #000;
+        }.raiseticket{background: #ccc; color: #000;}
+        p{font-size: 0.7rem; line-height: 1.5;}
+        .serviceCard{
+            width: 140px !important;
+            height: 180px !important;
+            flex: 0 0 auto;
+            box-sizing: border-box;
+            margin: 10px;
+            display: flex;
+            place-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            padding: 20px;
+            border: 2px solid #fff;
+            border-radius: 1rem;
+            gap: 10px;
+            color: #fff;
+            box-shadow: 0 0 10px 1px #a0f7;
+            background: #000;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }.serviceCard:hover{
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 0 12px 2px #a0f4;
+        }.serviceCard svg{fill: #a0f;}
+        .productCard{
+            width: 140px !important;
+            padding: 20px;
+            height: 250px;
+            background: linear-gradient(145deg, #a0f3, #ccc3, #a0f3);
+            display: flex;
+            place-items: start;
+            justify-content: start;
+            flex-direction: column;
+            border: 2px solid #a0f;
+            box-shadow: 0 0 20px 1px #ccc3;
+            border-radius: 1rem;
+            margin: 10px;
+            color: #000;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }.productCard:hover{
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 0 12px 2px #a0f4;
+        }.productCard img{width: 140px !important; border-radius: 1rem;}
+        .price{color: #0a0; font-weight: 600;}
+        .productIMG{
+            width: 140px !important;
+            height: 140px !important;
+            display: flex;
+            place-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 1px;
+        }form{
+            max-width: 600px;
+            width: 80%;
+            margin: 20px auto;
+            height: fit-content;
+            padding: 20px;
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 0 20px 1px #2223;
+            display: flex;
+            flex-wrap: wrap;
+            place-items: center;
+            justify-content: start;
+            gap: 10px;
+        }form>div{
+            gap: 8px;
+            display: flex;
+            place-items: start;
+            justify-content: center;
+            flex-direction: column;
+        }label{font-weight: 600;}
+        form input, select, textarea{
+            width: 250px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 1px solid #2223;
+            height: 30px;
+            resize: none;
+            font-family: inherit;
+        }form button{
+            width: 290px;
+            padding: 10px 20px;
+            height: 50px;
+            border-radius: 10px;
+            background: linear-gradient(120deg, #a0f, #00f);
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }form button:disabled{
+            opacity: 0.6;
+            cursor: not-allowed;
+        }.mandatory{color: #f00; font-weight: 300;}
+        table{
+            width: 100%;
+            max-width: 650px;
+            background: #fff;
+            overflow: hidden;
+            border-radius: 1rem;
+            border-collapse: collapse;
+            box-shadow: 0 0 20px 1px #2222;
+            margin-top: 15px;
+        }th{
+            padding: 12px 20px; 
+            background: #a0f; 
+            color: #fff;
+            text-align: left;
+        }td{
+            border: 1px solid #eee; 
+            padding: 12px 20px;
+            font-size: 0.85rem;
+        }tbody{overflow-y: auto;}
+        footer{
+            background: #222;
+            color: #ccc;
+        }footer a{padding: 0px; color: #fff;}
+        .hscroll::-webkit-scrollbar{width: 6px; height: 6px;}
+        .hscroll::-webkit-scrollbar-thumb{background: #a0f; border-radius: 3px;}
+        .hscroll::-webkit-scrollbar-track{background: #eee;}
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .badge-open { background: #ffecb3; color: #b78103; }
+        .badge-fixed { background: #c8e6c9; color: #256029; }
+        .badge-closed { background: #e2e8f0; color: #475569; }
+    </style>
+</head>
+<body>
+    <nav id="main">
+        <div style="display: flex; place-items: center; justify-content: start; gap: 8px;">
+            <img src="https://www.yash12007.com/192x192.png" alt="Yash12007 Logo" width="40" height="40" style="border-radius: 10px;">
+            <span>Support</span>
+        </div>
+        <a href="https://www.yash12007.com/Max/contact" target="_blank">Sales</a>
+    </nav>
+    <div class="hero">
+        <div style="max-width: min(340px, 92vw); box-sizing: border-box; display: flex; place-items: center; justify-content: center; flex-direction: column; gap: 20px; box-shadow: 0 0 20px 1px #2223; padding: 30px 50px; border-radius: 1rem;">
+            <div style="display: flex; place-items: center; justify-content: center; background: radial-gradient(circle at center, #a0f, #0ef); padding: 20px; border-radius: 50%; color: #fff;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+                    <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5"/>
+                </svg>
+            </div>
+            <div style="display: flex; place-items: center; justify-content: center; flex-direction: column; text-align: center;">
+                <h1 style="margin: 0px;">Consultancy and technical support</h1>
+                <p>Providing support to our users, individual developers, businesses, and organisations</p>
+            </div>
+            <div style="display: flex; place-items: center; justify-content: center;">
+                <a href="#raiseticket">Raise ticket</a>
+                <a href="#trackrequest">Track request</a>
+            </div>
+        </div>
+    </div>
+    <div class="learnmore">
+        <h2>Learn more</h2>
+        <p>At Yash12007, we provide software solutions (software products) and services (software/application development and consultancy) to individuals, businesses, and organisations</p>
+        <b>Our services include</b>
+        <div class="hscroll" style="width: 95%; height: fit-content; overflow-x: auto; margin: 10px auto; display: flex; place-items: center; justify-content: start;">
+            <div class="serviceCard">
+                <svg xmlns="http://www.w3.org/2000/svg" height="80px" viewBox="0 -960 960 960" width="80px" fill="#a0f"><path d="m270-120-10-88 114-314q15 14 32.5 23.5T444-484L334-182l-64 62Zm420 0-64-62-110-302q20-5 37.5-14.5T586-522l114 314-10 88ZM395-555q-35-35-35-85 0-39 22.5-69.5T440-752v-88h80v88q35 12 57.5 42.5T600-640q0 50-35 85t-85 35q-50 0-85-35Zm113.5-56.5Q520-623 520-640t-11.5-28.5Q497-680 480-680t-28.5 11.5Q440-657 440-640t11.5 28.5Q463-600 480-600t28.5-11.5Z"/></svg>
+                <b>System Architecture</b>
+            </div>
+            <div class="serviceCard">
+                <svg xmlns="http://www.w3.org/2000/svg" height="80px" viewBox="0 -960 960 960" width="80px" fill="#a0f"><path d="M120-200v-240h720v240H120Zm0-320v-80h720v80H120Zm0-160v-80h720v80H120Z"/></svg>
+                <b>UI / UX Design</b>
+            </div>
+            <div class="serviceCard">
+                <svg xmlns="http://www.w3.org/2000/svg" height="80px" viewBox="0 -960 960 960" width="80px" fill="#a0f"><path d="M280-120v-720 720Zm228.5-611.5Q520-743 520-760t-11.5-28.5Q497-800 480-800t-28.5 11.5Q440-777 440-760t11.5 28.5Q463-720 480-720t28.5-11.5ZM280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v124q18 7 29 22t11 34v80q0 19-11 34t-29 22v84h-80v-400H280v720h80v80h-80Zm304-16L440-200l144-144 56 57-87 87 87 87-56 57Zm192 0-56-57 87-87-87-87 56-57 144 144L776-56Z"/></svg>
+                <b>Mobile App Development</b>
+            </div>
+            <div class="serviceCard">
+                <svg xmlns="http://www.w3.org/2000/svg" height="80px" viewBox="0 -960 960 960" width="80px" fill="#a0f"><path d="M240-280 40-480l200-200 56 56-143 144 143 144-56 56Zm178 132-76-24 200-640 76 24-200 640Zm302-132-56-56 143-144-143-144 56-56 200 200-200 200Z"/></svg>
+                <b>Full-Stack Systems</b>
+            </div>
+            <div class="serviceCard">
+                <svg xmlns="http://www.w3.org/2000/svg" height="80px" viewBox="0 -960 960 960" width="80px" fill="#a0f"><path d="M200-120q-51 0-72.5-45.5T138-250l222-270v-240h-40q-17 0-28.5-11.5T280-800q0-17 11.5-28.5T320-840h320q17 0 28.5 11.5T680-800q0 17-11.5 28.5T640-760h-40v240l222 270q32 39 10.5 84.5T760-120H200Zm0-80h560L520-492v-268h-80v268L200-200Zm280-280Z"/></svg>
+                <b>Flask & Backend Engineering</b>
+            </div>
+            <div class="serviceCard">
+                <svg xmlns="http://www.w3.org/2000/svg" height="80px" viewBox="0 -960 960 960" width="80px" fill="#a0f"><path d="M480-340q33 0 56.5-23.5T560-420q0-33-23.5-56.5T480-500q-33 0-56.5 23.5T400-420q0 33 23.5 56.5T480-340ZM160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm0-80h640v-440H160v440Zm240-520h160v-80H400v80ZM160-200v-440 440Z"/></svg>
+                <b>Enterprise Infrastructure</b>
+            </div>
+            <div class="serviceCard">
+                <svg xmlns="http://www.w3.org/2000/svg" height="80px" viewBox="0 -960 960 960" width="80px" fill="#a0f"><path d="M440-120v-80h320v-284q0-117-81.5-198.5T480-764q-117 0-198.5 81.5T200-484v244h-40q-33 0-56.5-23.5T80-320v-80q0-21 10.5-39.5T120-469l3-53q8-68 39.5-126t79-101q47.5-43 109-67T480-840q68 0 129 24t109 66.5Q766-707 797-649t40 126l3 52q19 9 29.5 27t10.5 38v92q0 20-10.5 38T840-249v49q0 33-23.5 56.5T760-120H440ZM331.5-411.5Q320-423 320-440t11.5-28.5Q343-480 360-480t28.5 11.5Q400-457 400-440t-11.5 28.5Q377-400 360-400t-28.5-11.5Zm240 0Q560-423 560-440t11.5-28.5Q583-480 600-480t28.5 11.5Q640-457 640-440t-11.5 28.5Q617-400 600-400t-28.5-11.5ZM241-462q-7-106 64-182t177-76q89 0 156.5 56.5T720-519q-91-1-167.5-49T435-698q-16 80-67.5 142.5T241-462Z"/></svg>
+                <b>Software Consulting</b>
+            </div>
+            <div class="serviceCard">
+                <svg xmlns="http://www.w3.org/2000/svg" height="80px" viewBox="0 -960 960 960" width="80px" fill="#a0f"><path d="m438-592 40-116h4l40 116h-84Zm42 232q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70ZM350-480h48l26-72h112l26 72h48L504-760h-50L350-480ZM120-80v-200h80v200h-80Zm160 0v-200h80v200h-80Zm160 0v-200h80v200h-80Zm160 0v-200h240v200H600Z"/></svg>
+                <b>IT Optimisation</b>
+            </div>
+            <div class="serviceCard">
+                <svg xmlns="http://www.w3.org/2000/svg" height="80px" viewBox="0 -960 960 960" width="80px" fill="#a0f"><path d="M441-82q-76-8-141.5-41.5t-114.5-87Q136-264 108-333T80-480q0-157 104.5-270T441-878v81q-119 15-200 104.5T160-480q0 123 81 212.5T441-163v81Zm0-198v-247L337-423l-56-57 200-200 200 200-57 56-103-103v247h-80Zm80 198v-81q44-5 83.5-22t72.5-43l57 58q-45 36-99 59T521-82Zm155-650q-33-26-72-43t-83-22v-81q60 6 114 29t99 59l-58 58Zm114 505-57-57q26-33 43-72.5t22-83.5h81q-6 60-29.5 114T790-227Zm8-293q-5-44-22-83.5T733-676l57-57q36 45 59.5 99T879-520h-81Z"/></svg>
+                <b>Software Outsourcing</b>
+            </div>
+        </div>
+        <b>Products we have</b>
+        <div class="hscroll" style="width: 95%; height: fit-content; overflow-x: auto; margin: 10px auto; display: flex; place-items: center; justify-content: start;">
+            <div class="productCard">
+                <div class="productIMG">
+                    <img src="https://www.yash12007.com/Sera/Sera.png" alt="Sera Logo">
+                </div>
+                <b>SERA 3.0</b>
+                <p>Antivirus and security software</p>
+                <span class="price">$30.00</span>
+            </div>
+            <div class="productCard">
+                <div class="productIMG">
+                    <img src="https://www.yash12007.com/metrica/Metrica.png" alt="Metrica Logo">
+                </div>
+                <b>Metrica</b>
+                <p>Performance Analytics software</p>
+                <span class="price">$5.00</span>
+            </div>
+            <div class="productCard">
+                <div class="productIMG">
+                    <img src="https://public-files.gumroad.com/zmb6iz6ha745ix6939wdlosb3000" alt="Spacewar S1 basic model | Featured image">
+                </div>
+                <b>Spacewar S1 basic model</b>
+                <p>3D model for Artists</p>
+                <span class="price">$15.00</span>
+            </div>
+            <div class="productCard">
+                <div class="productIMG">
+                    <img src="https://public-files.gumroad.com/dp6ds3v854rodqrsrlivz3jgwhcl" alt="Nova Workspace 3D Scene Pack | Logo">
+                </div>
+                <b>Nova Workspace 3D Scene Pack</b>
+                <p>3D model for Artists</p>
+                <span class="price">$12.00</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- RAISE TICKET SECTION -->
+    <div class="raiseticket" id="raiseticket">
+        <form id="ticketForm">
+            <div style="width: 100%; margin-bottom: 10px;">
+                <h3 style="margin: 0px;">Raise ticket</h3>
+                <p>Enter the details of the issue you are facing. Make sure the details you provide are real and filled in honestly.</p>
+            </div>
+            <div>
+                <label for="name">Full name <span class="mandatory">*</span></label>
+                <input required type="text" id="name" name="Full Name" placeholder="John Doe">
+            </div>
+            <div>
+                <label for="email">Email ID <span class="mandatory">*</span></label>
+                <input required type="email" name="Email" id="email" placeholder="user@example.com">
+            </div>
+            <div>
+                <label for="phone">Phone no. <span class="mandatory">*</span></label>
+                <input type="tel" required name="Phone" id="phone" placeholder="+12345678910">
+            </div>
+            <div>
+                <label for="category">Issue category <span class="mandatory">*</span></label>
+                <select name="Issue Category" required id="category" style="cursor: pointer; width: 290px; height: 50px; background: #fff;">
+                    <option value="service">Service</option>
+                    <option value="product">Product</option>
+                </select>
+            </div>
+            <div>
+                <label for="specific">Specific item <span class="mandatory">*</span></label>
+                <select name="Specific Item" id="specific" required style="cursor: pointer; width: 290px; height: 50px; background: #fff;">
+                    <!-- Dynamically populated -->
+                </select>
+            </div>
+            <div style="width: 100%;">
+                <label for="description">Describe your issue <span class="mandatory">*</span></label>
+                <textarea name="Description" id="description" required placeholder="There's an issue about ..." style="width: calc(100% - 40px); height: 80px;"></textarea>
+            </div>
+            <button type="submit" id="submitBtn">Raise your ticket</button>
+            <div id="formStatus" style="width: 100%; font-size: 0.85rem; font-weight: bold; margin-top: 5px;"></div>
+        </form>
+    </div>
+
+    <!-- TRACK REQUEST SECTION -->
+    <div class="trackrequest" id="trackrequest">
+        <h4>Track request</h4>
+        <p>Use the Ticket ID to find your issue-solving request. Enter the Ticket ID in the input field below and click Search to check the status of your request.</p>
+        <div style="display: flex; place-items: start; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            <form id="trackForm" style="color: #000; max-width: 320px !important; margin: 0px;">
+                <div style="width: 100%; margin-bottom: 10px;">
+                    <b style="margin: 0px;">Ticket tracker</b>
+                    <p style="margin: 0px;">Make sure the ticket ID is valid and prefixed properly.</p>
+                </div>
+                <div>
+                    <label for="trackticket">Ticket ID <span class="mandatory">*</span></label>
+                    <input type="text" id="trackticket" required placeholder="e.g. TICK-XXXXX" style="text-transform: uppercase;">
+                </div>
+                <button type="submit" id="trackBtn">Search</button>
+                <div id="trackStatus" style="width: 100%; font-size: 0.8rem; font-weight: bold;"></div>
+            </form>
+
+            <table style="display: none;" id="trackerTable">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">Property</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody id="trackerTableBody">
+                    <!-- Populated dynamically via JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <h5>Yash12007 | Support</h5>
+        <p>&copy; 2023-2026 Yash12007. All Rights Reserved.</p>
+        <p style="display: flex; place-items: center; gap: 8px;">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#a0f"><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/></svg> 
+            Telephone: <a href="tel:+917420891287">(+91) 742-0891-287</a><br>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#a0f"><path d="M480-440 160-640v400h360v80H160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v280h-80v-200L480-440Zm0-80 320-200H160l320 200ZM760-40l-56-56 63-64H600v-80h167l-64-64 57-56 160 160L760-40ZM160-640v440-240 3-283 80Z"/></svg> 
+            E-mail: <a href="mailto:info@yash12007.com">info@yash12007.com</a>
+        </p>
+    </footer>
+
+    <script>
+        // Catalog lists mapped to your actual catalog and services
+        const catalog = {
+            service: [
+                "System Architecture",
+                "UI / UX Design",
+                "Mobile App Development",
+                "Full-Stack Systems",
+                "Flask & Backend Engineering",
+                "Enterprise Infrastructure",
+                "Software Consulting",
+                "IT Optimisation",
+                "Software Outsourcing",
+                "Other Consultation / Service"
+            ],
+            product: [
+                "SERA 3.0",
+                "Metrica",
+                "Spacewar S1 basic model",
+                "Nova Workspace 3D Scene Pack",
+                "Other Product"
+            ]
+        };
+
+        const categorySelect = document.getElementById('category');
+        const specificSelect = document.getElementById('specific');
+        const ticketForm = document.getElementById('ticketForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formStatus = document.getElementById('formStatus');
+
+        const trackForm = document.getElementById('trackForm');
+        const trackInput = document.getElementById('trackticket');
+        const trackBtn = document.getElementById('trackBtn');
+        const trackStatus = document.getElementById('trackStatus');
+        const trackerTable = document.getElementById('trackerTable');
+        const trackerTableBody = document.getElementById('trackerTableBody');
+
+        // Dynamic select population
+        function populateSpecificDropdown(type) {
+            specificSelect.innerHTML = '';
+            const items = catalog[type] || [];
+            items.forEach(item => {
+                const opt = document.createElement('option');
+                opt.value = item;
+                opt.textContent = item;
+                specificSelect.appendChild(opt);
+            });
+        }
+
+        categorySelect.addEventListener('change', (e) => {
+            populateSpecificDropdown(e.target.value);
+        });
+        populateSpecificDropdown('service'); // Initialize default
+
+        // Submit Ticket
+        ticketForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            formStatus.innerHTML = '';
+
+            const formData = new FormData(ticketForm);
+            const payload = Object.fromEntries(formData.entries());
+
+            try {
+                const res = await fetch('/support/ticket', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await res.json();
+
+                if (res.ok && data.status) {
+                    formStatus.style.color = '#0a0';
+                    formStatus.innerHTML = `Success! Your ticket has been created.<br>Ticket ID: <strong>${data.ticketId}</strong> (Save this to track progress!)`;
+                    ticketForm.reset();
+                    populateSpecificDropdown('service');
+                } else {
+                    throw new Error(data.message || 'Submission failed.');
+                }
+            } catch (err) {
+                formStatus.style.color = '#f00';
+                formStatus.textContent = err.message || 'An error occurred while sending your ticket.';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Raise your ticket';
+            }
+        });
+
+        // Track Ticket
+        trackForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const ticketId = trackInput.value.trim().toUpperCase();
+            if (!ticketId) return;
+
+            trackBtn.disabled = true;
+            trackBtn.textContent = 'Searching...';
+            trackStatus.innerHTML = '';
+            trackerTable.style.display = 'none';
+
+            try {
+                const res = await fetch(`/support/tickets/track/${encodeURIComponent(ticketId)}`);
+                const data = await res.json();
+
+                if (!res.ok || !data.status) {
+                    throw new Error(data.message || 'Ticket not found.');
+                }
+
+                const t = data.ticket;
+                const statusBadge = `<span class="badge badge-${t.status}">${t.status}</span>`;
+
+                trackerTableBody.innerHTML = `
+                    <tr><td><strong>Ticket ID</strong></td><td>${t.id}</td></tr>
+                    <tr><td><strong>Status</strong></td><td>${statusBadge}</td></tr>
+                    <tr><td><strong>Created</strong></td><td>${new Date(t.createdAt).toLocaleString()}</td></tr>
+                    <tr><td><strong>Category</strong></td><td>${t.formData?.['Issue Category'] || 'N/A'}</td></tr>
+                    <tr><td><strong>Item</strong></td><td>${t.formData?.['Specific Item'] || 'N/A'}</td></tr>
+                    <tr><td><strong>Issue Description</strong></td><td>${t.formData?.Description || 'N/A'}</td></tr>
+                    <tr><td><strong>Engineer Note</strong></td><td>${t.resolutionNotes || 'Under technical evaluation.'}</td></tr>
+                `;
+                trackerTable.style.display = 'table';
+            } catch (err) {
+                trackStatus.style.color = '#f00';
+                trackStatus.textContent = err.message || 'Failed to locate ticket.';
+            } finally {
+                trackBtn.disabled = false;
+                trackBtn.textContent = 'Search';
+            }
+        });
+
+        // Anchor handler for query params (?raiseticket, ?trackrequest)
+        const searchParams = new URLSearchParams(window.location.search);
+        if (searchParams.has('raiseticket')) {
+            window.location.hash = 'raiseticket';
+        } else if (searchParams.has('trackrequest')) {
+            window.location.hash = 'trackrequest';
+        }
+    </script>
+</body>
+</html>
