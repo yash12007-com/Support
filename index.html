@@ -403,6 +403,7 @@
     </footer>
 
     <script>
+        const api_base_url = "https://server.yash12007.com";
         // Catalog lists mapped to your actual catalog and services
         const catalog = {
             service: [
@@ -467,7 +468,7 @@
             const payload = Object.fromEntries(formData.entries());
 
             try {
-                const res = await fetch('/support/ticket', {
+                const res = await fetch(api_base_url+'/support/ticket', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
@@ -504,7 +505,7 @@
             trackerTable.style.display = 'none';
 
             try {
-                const res = await fetch(`/support/tickets/track/${encodeURIComponent(ticketId)}`);
+                const res = await fetch(`${api_base_url}/support/tickets/track/${encodeURIComponent(ticketId)}`);
                 const data = await res.json();
 
                 if (!res.ok || !data.status) {
