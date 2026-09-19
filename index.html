@@ -154,7 +154,7 @@
             flex-direction: column;
         }label{font-weight: 600;}
         form input, select, textarea{
-            width: 250px;
+            width: 210px;
             padding: 10px 20px;
             border-radius: 10px;
             border: 1px solid #2223;
@@ -339,14 +339,14 @@
             </div>
             <div>
                 <label for="category">Issue category <span class="mandatory">*</span></label>
-                <select name="Issue Category" required id="category" style="cursor: pointer; width: 290px; height: 50px; background: #fff;">
+                <select name="Issue Category" required id="category" style="cursor: pointer; width: 250px; height: 50px; background: #fff;">
                     <option value="service">Service</option>
                     <option value="product">Product</option>
                 </select>
             </div>
             <div>
                 <label for="specific">Specific item <span class="mandatory">*</span></label>
-                <select name="Specific Item" id="specific" required style="cursor: pointer; width: 290px; height: 50px; background: #fff;">
+                <select name="Specific Item" id="specific" required style="cursor: pointer; width: 250px; height: 50px; background: #fff;">
                     <!-- Dynamically populated -->
                 </select>
             </div>
@@ -403,7 +403,6 @@
     </footer>
 
     <script>
-        const api_base_url = "https://server.yash12007.com";
         // Catalog lists mapped to your actual catalog and services
         const catalog = {
             service: [
@@ -468,7 +467,7 @@
             const payload = Object.fromEntries(formData.entries());
 
             try {
-                const res = await fetch(api_base_url+'/support/ticket', {
+                const res = await fetch('/support/ticket', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
@@ -505,7 +504,7 @@
             trackerTable.style.display = 'none';
 
             try {
-                const res = await fetch(`${api_base_url}/support/tickets/track/${encodeURIComponent(ticketId)}`);
+                const res = await fetch(`/support/tickets/track/${encodeURIComponent(ticketId)}`);
                 const data = await res.json();
 
                 if (!res.ok || !data.status) {
